@@ -18,5 +18,9 @@ class ActionItemViewModel(
         repository.delete(item)
     }
 
+    fun update(item: ActionItem) = CoroutineScope(Dispatchers.Main).launch {
+        repository.update(item)
+    }
+
     fun getAllActionItems() = repository.getAllActionItems()
 }

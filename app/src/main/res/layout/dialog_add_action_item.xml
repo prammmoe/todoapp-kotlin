@@ -20,7 +20,6 @@
         android:layout_width="match_parent"
         android:layout_height="100dp"
         android:ems="10"
-        android:hint="Today I am going to do ..."
         android:inputType="text"
         android:textColor="@android:color/black"
         />

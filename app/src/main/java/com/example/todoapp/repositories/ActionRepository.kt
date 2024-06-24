@@ -8,6 +8,7 @@ class ActionRepository(
 ) {
     suspend fun insert(item: ActionItem) = db.getActionDao().insert(item)
     suspend fun delete(item: ActionItem) = db.getActionDao().delete(item)
+    suspend fun update(item: ActionItem) = db.getActionDao().update(item)
 
     fun getAllActionItems() = db.getActionDao().getAllActionItems()
 }

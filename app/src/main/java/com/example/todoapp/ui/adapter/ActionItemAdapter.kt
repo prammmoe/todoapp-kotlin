@@ -6,6 +6,8 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.todoapp.data.db.entities.ActionItem
 import com.example.todoapp.databinding.ActionItemBinding
 import com.example.todoapp.ui.actionitem.ActionItemViewModel
+import com.example.todoapp.ui.actionitem.EditActionItemDialog
+import com.example.todoapp.ui.actionitem.EditDialogListener
 
 class ActionItemAdapter(
     var items: List<ActionItem>,
@@ -34,6 +36,14 @@ class ActionItemAdapter(
 
             binding.ivDelete.setOnClickListener {
                 viewModel.delete(actionItem)
+            }
+
+            binding.ivEdit.setOnClickListener {
+                EditActionItemDialog(binding.root.context, actionItem, object : EditDialogListener {
+                    override fun onEditButtonClicked(item: ActionItem) {
+                        viewModel.update(item)
+                    }
+                }).show()
             }
 
             binding.statusCheckBox.setOnCheckedChangeListener { _, isChecked ->

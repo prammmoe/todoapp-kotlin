@@ -1,5 +1,6 @@
 package com.example.todoapp.ui.actionitem
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
@@ -20,6 +21,7 @@ class MainActivity : AppCompatActivity(), KodeinAware {
 
     private lateinit var viewModel: ActionItemViewModel
 
+    @SuppressLint("NotifyDataSetChanged")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
